@@ -2,14 +2,14 @@
 
 A comprehensive web application for real-time sentiment analysis supporting multiple languages using advanced NLP techniques. Built with Flask backend and React frontend with Material-UI.
 
-## Features
+## 🌟 Features
 
-### 🎯 Core Analysis
+### Core Analysis
 - **Multi-language sentiment analysis** using TextBlob and NLTK VADER
 - **Language detection** for automatic language identification
 - **Real-time text processing** with comprehensive NLP pipeline
 
-### 📊 Advanced NLP Features
+### Advanced NLP Features
 - **Named Entity Recognition (NER)** using spaCy
 - **Part-of-Speech (POS) tagging** with detailed token analysis
 - **Emotion detection** with 7 emotion categories
@@ -17,7 +17,7 @@ A comprehensive web application for real-time sentiment analysis supporting mult
 - **Readability metrics** using multiple algorithms
 - **Emoji analysis** and sentiment correlation
 
-### 📈 Interactive Visualizations
+### Interactive Visualizations
 - **Sentiment trend charts** with TextBlob and NLTK comparisons
 - **Emotion distribution** with color-coded visualizations
 - **Interactive word cloud** with hover effects
@@ -25,14 +25,14 @@ A comprehensive web application for real-time sentiment analysis supporting mult
 - **POS tag distribution** charts
 - **Readability score** breakdowns
 
-### 🎨 Modern UI/UX
+### Modern UI/UX
 - **Responsive Material-UI design** for cross-platform compatibility
 - **Tabbed interface** for organized analysis sections
 - **Real-time progress indicators** during analysis
 - **Interactive charts** with tooltips and hover effects
 - **Color-coded sentiment indicators** for quick insights
 
-## Technology Stack
+## 🛠️ Technology Stack
 
 ### Backend
 - **Flask** - Python web framework
@@ -50,63 +50,50 @@ A comprehensive web application for real-time sentiment analysis supporting mult
 - **Recharts** - Interactive charting library
 - **Axios** - HTTP client for API communication
 
-## Installation
+## 🚀 Quick Start
 
 ### Prerequisites
 - Python 3.8+
 - Node.js 16+
 - npm or yarn
 
-### Backend Setup
+### Option 1: Quick Start Scripts
 
-1. Navigate to the backend directory:
+**Unix/Mac:**
 ```bash
-cd sentiment_analyzer/backend
+git clone https://github.com/pradhyumna186/sentiment_analyzer.git
+cd sentiment_analyzer
+chmod +x start.sh
+./start.sh
 ```
 
-2. Create a virtual environment:
+**Windows:**
 ```bash
+git clone https://github.com/pradhyumna186/sentiment_analyzer.git
+cd sentiment_analyzer
+start.bat
+```
+
+### Option 2: Manual Setup
+
+**Backend Setup:**
+```bash
+cd backend
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-```bash
 pip install -r requirements.txt
-```
-
-4. Download spaCy model:
-```bash
 python -m spacy download en_core_web_sm
-```
-
-5. Start the Flask server:
-```bash
 python app.py
 ```
 
-The backend will be available at `http://localhost:5000`
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
+**Frontend Setup (in new terminal):**
 ```bash
-cd sentiment_analyzer/frontend
-```
-
-2. Install dependencies:
-```bash
+cd frontend
 npm install
-```
-
-3. Start the development server:
-```bash
 npm run dev
 ```
 
-The frontend will be available at `http://localhost:5173`
-
-## Usage
+## 📱 Usage
 
 1. **Open the application** in your browser at `http://localhost:5173`
 
@@ -122,7 +109,25 @@ The frontend will be available at `http://localhost:5173`
    - **POS Tagging**: Part-of-speech analysis with filtering
    - **Readability**: Multiple readability metrics and insights
 
-## API Endpoints
+## 🧪 Test Examples
+
+### Positive Sentiment
+```
+"I love this amazing product! It is fantastic and makes me very happy."
+```
+
+### Negative Sentiment
+```
+"I hate this terrible product. It is awful and makes me very angry and frustrated."
+```
+
+### Multi-language Support
+```
+"Ce produit est incroyable! Je l'adore vraiment."
+"Este producto es fantástico! Me encanta mucho."
+```
+
+## 📊 API Endpoints
 
 ### POST `/api/analyze`
 Analyze a single text input.
@@ -169,7 +174,7 @@ Analyze multiple texts at once.
 ### GET `/api/health`
 Health check endpoint.
 
-## Features in Detail
+## 🔧 Features in Detail
 
 ### Sentiment Analysis
 - **TextBlob**: Provides polarity (-1 to 1) and subjectivity (0 to 1) scores
@@ -201,7 +206,51 @@ Health check endpoint.
 - **Interactive word cloud**: Size and color based on frequency
 - **Stop word removal**: Automatic filtering of common words
 
-## Contributing
+## 🏗️ Project Structure
+
+```
+sentiment_analyzer/
+├── backend/
+│   ├── app.py              # Flask API with comprehensive NLP
+│   ├── requirements.txt    # Python dependencies
+│   └── venv/              # Virtual environment
+├── frontend/
+│   ├── src/
+│   │   ├── components/    # React components
+│   │   └── App.jsx        # Main app
+│   ├── package.json       # Node.js dependencies
+│   └── vite.config.js     # Vite configuration
+├── start.sh               # Unix startup script
+├── start.bat              # Windows startup script
+└── README.md              # This file
+```
+
+## 🐛 Troubleshooting
+
+### If servers stop running:
+1. **Backend**: `cd backend && source venv/bin/activate && python app.py`
+2. **Frontend**: `cd frontend && npm run dev`
+
+### If you get CORS errors:
+- Make sure both servers are running
+- Check that backend is on port 5001 and frontend on port 5173
+
+### If analysis fails:
+- Check that all NLTK data is downloaded
+- Ensure spaCy model is installed: `python -m spacy download en_core_web_sm`
+
+### Port conflicts:
+- If port 5000 is in use (common on macOS), the app uses port 5001
+- If port 5173 is in use, Vite will automatically use the next available port
+
+## 📈 Performance
+
+- **Real-time analysis**: Most texts analyze in under 2 seconds
+- **Multi-language support**: Automatic language detection
+- **Scalable architecture**: Can handle multiple concurrent requests
+- **Responsive UI**: Works on desktop, tablet, and mobile devices
+
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -209,11 +258,11 @@ Health check endpoint.
 4. Add tests if applicable
 5. Submit a pull request
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - **NLTK** for natural language processing capabilities
 - **TextBlob** for sentiment analysis
@@ -221,6 +270,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Material-UI** for the beautiful React components
 - **Recharts** for interactive data visualization
 
-## Support
+---
 
-For support and questions, please open an issue in the repository or contact the development team. 
+**Built with ❤️ using Flask, React, NLTK, TextBlob, spaCy, and Material-UI** 
